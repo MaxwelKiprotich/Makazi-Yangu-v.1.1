@@ -1,0 +1,87 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 150 33% 98%;
+    --foreground: 150 30% 10%;
+
+    --card: 150 33% 99%;
+    --card-foreground: 150 30% 10%;
+
+    --popover: 150 33% 99%;
+    --popover-foreground: 150 30% 10%;
+
+    --primary: 150 65% 15%;
+    --primary-foreground: 150 10% 98%;
+
+    --secondary: 150 5% 96%;
+    --secondary-foreground: 150 30% 10%;
+
+    --muted: 150 5% 96%;
+    --muted-foreground: 150 10% 40%;
+
+    --accent: 150 5% 96%;
+    --accent-foreground: 150 30% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 150 10% 98%;
+
+    --border: 150 10% 90%;
+    --input: 150 10% 90%;
+    --ring: 150 65% 15%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  .bg-pattern {
+    background-image: url('/lovable-uploads/6a21f2de-7258-46c3-815c-6a2ea7c4c076.png');
+    background-size: 200px;
+    background-repeat: repeat;
+    background-position: center;
+    background-blend-mode: soft-light;
+    background-color: rgba(245, 245, 240, 0.97);
+  }
+  
+  .dark-overlay {
+    @apply after:absolute after:inset-0 after:bg-makazi-dark after:bg-opacity-50 relative overflow-hidden;
+  }
+  
+  .property-card {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .reveal {
+    @apply opacity-0;
+    animation: reveal 0.8s forwards;
+  }
+  
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+}
